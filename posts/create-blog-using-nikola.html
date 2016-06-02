@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="透過Nikola打照個人的Blog，並佈署到Github上">
+<meta name="viewport" content="width=device-width">
+<title>使用Nikola + Github Pages打造個人部落格 | MJ Space</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://minewang.github.io/posts/create-blog-using-nikola.html">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Mango">
+<meta property="og:site_name" content="MJ Space">
+<meta property="og:title" content="使用Nikola + Github Pages打造個人部落格">
+<meta property="og:url" content="http://minewang.github.io/posts/create-blog-using-nikola.html">
+<meta property="og:description" content="透過Nikola打照個人的Blog，並佈署到Github上">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-06-01T18:55:39+08:00">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="github pages">
+<meta property="article:tag" content="nikola">
+<meta property="article:tag" content="python">
+</head>
+<body>
+    <section class="social"><ul>
+<li><a href="../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://github.com/minewang" title="My Github"><i class="icon-github"></i></a></li>
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+    <div class="post">
+    
+    <h1 class="p-name entry-title" itemprop="headline name">使用Nikola + Github Pages打造個人部落格</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2016-06-01T18:55:39+08:00">2016-06-01 18:55</time>
+            
+
+            
+          |  
+        <a href="create-blog-using-nikola.rst" id="sourcelink">Source</a>
+
+            </div>
+            
+        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/blog.html" rel="tag">blog</a></li>
+           <li><a class="tag p-category" href="../categories/github-pages.html" rel="tag">github pages</a></li>
+           <li><a class="tag p-category" href="../categories/nikola.html" rel="tag">nikola</a></li>
+           <li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+        </ul>
+</div>
+
+        </div>
+        <div class="body">
+            <div>
+<p>首先恭喜自己終於生出第一篇文章了XD</p>
+<p>很久之前就想開個部落格分享和記錄自己在程式開發與學習上的心得，不過礙於人性怠惰的關係，
+以及一些Blog系統在貼程式碼較麻煩，Ex: Wordpress,這套知名的Blog系統雖然功能強大,
+但是有太多我不需要的東西,因此不考慮使用。</p>
+<!-- TEASER_END -->
+<p>因此開始尋找有無適合寫技術Blog(可以貼code+syntax highlight)，參考了一些相關文章後,
+我選擇了 <a class="reference external" href="https://getnikola.com">Nikola</a> ，主要有以下兩點原因:</p>
+<ul class="simple">
+<li>速度快，請參考Chris Warrick寫的針對四個Static Site Generator做的速度測試
+<a class="reference external" href="https://chriswarrick.com/blog/2015/07/23/ssg-speed-test/">文章</a> 。</li>
+<li>使用 <a class="reference external" href="https://www.python.org/">Python</a> 打造，因此我可以直接在裝有Python的系統管理Blog，不需要架設server
+或登入後台操作。</li>
+</ul>
+<p>決定好Blog系統後，當然是馬上安裝來使用看看，先簡單介紹我的作業環境:</p>
+<div class="section" id="id1">
+<h2>作業環境</h2>
+<ul class="simple">
+<li>OS El Capitan 10.11.3</li>
+<li>Python 3.5.1</li>
+<li>Vim &amp; Sublime Text 3</li>
+</ul>
+<p>接著當然是安裝Nikola，安裝方式很簡單，這邊就不多做介紹了，參考官方的文件大約5-10分鐘即可完成:</p>
+</div>
+<div class="section" id="nikola">
+<h2>安裝Nikola</h2>
+<ul class="simple">
+<li><a class="reference external" href="https://getnikola.com/getting-started.html">Getting Started</a></li>
+<li><a class="reference external" href="https://getnikola.com/handbook.html">Handbook</a></li>
+</ul>
+<p>照著官方文件的教學，很快即可建造一個乾淨的Blog，開始撰寫我們的文章了。
+然而有了Blog後，接著是決定Blog該放置在哪邊，考量到我的使用習慣，
+特地租用一台主機 + domain來管理似乎有點浪費，因此選擇了 <a class="reference external" href="https://pages.github.com">Github Pages</a> ，
+Github Pages提供個人/組織網頁以及專案網頁的建立，此外，由於我們使用的是Github，
+除了用來管理我們的source code以外，理所當然的也可以用來管理我們的網頁！
+更棒的是，Nikola也支援佈署到Github的功能！</p>
+</div>
+<div class="section" id="github">
+<h2>佈署到Github</h2>
+<p>有關如何佈署我們的Blog到Github上，請參考 <a class="reference external" href="https://getnikola.com/handbook.html#deployment">Handbook</a> ，
+設定好後即可透過簡單的指令將Blog丟上去:</p>
+<pre class="code bash"><a name="rest_code_ddc75cd5f9bf4502aefd074cb9c11cd4-1"></a>nikola github_deploy
+</pre>
+<p>完成後等待Github Pages處理，Github Pages預設提供的網址為 &lt;username.github.io&gt; ， 很快即可看到我們的Blog上線囉！</p>
+<p>首篇就先寫到這邊吧，未來要逼自己養成習慣，將所學的一些內容記錄下來(最近真的有感腦容量有限，不記錄下來很快就忘啦!)
+並分享給大家，畢竟很多技巧與知識都是拜各大神的文章來的，
+除此之外，也期待與大家互相交流，好發現自己一些觀念上或理解上有錯誤的部分！</p>
+</div>
+</div>
+        </div>
+        
+
+            
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="mjwangblog",
+            disqus_url="http://minewang.github.io/posts/create-blog-using-nikola.html",
+        disqus_title="\u4f7f\u7528Nikola + Github Pages\u6253\u9020\u500b\u4eba\u90e8\u843d\u683c",
+        disqus_identifier="cache/posts/create-blog-using-nikola.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+
+    </div>
+
+        
+       <script>var disqus_shortname="mjwangblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2016         <a href="mailto:mango79314@gmail.com">Mango</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </section><script src="../assets/js/all-nocdn.js" type="text/javascript"></script><script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

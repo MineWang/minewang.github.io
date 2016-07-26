@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://minewang.github.io/2016/index.html</loc>
-  <lastmod>2016-07-26T17:59:00Z</lastmod>
+  <lastmod>2016-07-26T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>http://minewang.github.io/archive.html</loc>
@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>http://minewang.github.io/categories/laravel.html</loc>
-  <lastmod>2016-07-26T17:59:00Z</lastmod>
+  <lastmod>2016-07-26T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>http://minewang.github.io/categories/nikola.html</loc>
@@ -35,7 +35,7 @@
  </url>
  <url>
   <loc>http://minewang.github.io/categories/php.html</loc>
-  <lastmod>2016-07-26T17:59:00Z</lastmod>
+  <lastmod>2016-07-26T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>http://minewang.github.io/categories/python.html</loc>
@@ -43,7 +43,7 @@
  </url>
  <url>
   <loc>http://minewang.github.io/categories/valet.html</loc>
-  <lastmod>2016-07-26T17:59:00Z</lastmod>
+  <lastmod>2016-07-26T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>http://minewang.github.io/galleries/index.html</loc>
@@ -51,7 +51,7 @@
  </url>
  <url>
   <loc>http://minewang.github.io/index.html</loc>
-  <lastmod>2016-07-26T17:59:00Z</lastmod>
+  <lastmod>2016-07-26T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>http://minewang.github.io/listings/index.html</loc>
@@ -63,6 +63,6 @@
  </url>
  <url>
   <loc>http://minewang.github.io/posts/create-laravel-development-enviroment-with-laravel-valet.html</loc>
-  <lastmod>2016-07-26T17:59:00Z</lastmod>
+  <lastmod>2016-07-26T18:03:00Z</lastmod>
  </url>
 </urlset>

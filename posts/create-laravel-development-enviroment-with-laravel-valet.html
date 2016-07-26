@@ -60,7 +60,7 @@
 <!-- TEASER_END -->
 <p>有使用過Laravel開發的朋友應該會知道Laravel提供的另一個強大的本地開發環境 <strong>Homestead</strong> ，最早之前我也是使用Homestead來進行開發的，參照 <a class="reference external" href="https://laravel.com/docs/5.2/homestead">官方文件</a> 即可打造出一個事先配置好的虛擬環境。</p>
 <p>然而Homestead在啟動的速度較慢，且因為Homestead本身就是個完整的Ubuntu虛擬機器，所以安裝所需的空間也較大，對於單純想專注於網頁開發與資料庫的人來說有點殺雞焉用牛刀了，如果只是純粹想要能在本地快速開發網頁的話，那Valet是一個好選擇。</p>
-<p>Laravel Valet目前只支援Mac系統，安裝上十分簡單，只要事先裝好PHP與SQL資料庫即可，在Mac上可以簡單透過 <cite>Homebrew &lt;http://brew.sh&gt;</cite> 來完成，詳細請參考官方的 <a class="reference external" href="https://laravel.com/docs/5.2/valet">說明文件</a> ，這邊就不再多說明安裝流程。另外要注意的是確保沒有程式佔用80 port, 否則安裝可能會失敗。</p>
+<p>Laravel Valet目前只支援Mac系統，安裝上十分簡單，只要事先裝好PHP與SQL資料庫即可，在Mac上可以簡單透過 <a class="reference external" href="http://brew.sh">Homebrew</a> 來完成，詳細請參考官方的 <a class="reference external" href="https://laravel.com/docs/5.2/valet">說明文件</a> ，這邊就不再多說明安裝流程。另外要注意的是確保沒有程式佔用80 port, 否則安裝可能會失敗。</p>
 <div class="section" id="serving-sites">
 <h2>Serving Sites</h2>
 <p>當Valet安裝好後，可以透過兩個指令來執行我們的Laravel網站: <strong>park</strong> 與 <strong>link</strong> 。</p>
@@ -72,16 +72,16 @@
 <div class="section" id="domain">
 <h2>使用其他Domain</h2>
 <p>Valet預設的domain使用 ** .dev ** 結尾，其網址的結構為 <cite>http://&lt;Folder Name&gt;.dev</cite> ，我們可以透過下面的指令更改想要的網域:</p>
-<pre class="code bash"><a name="rest_code_cf4109645ebd4050a90d776be7516ec8-1"></a>valet domain &lt;name&gt;
+<pre class="code bash"><a name="rest_code_00ecb1b7fbbe459fb674d61a56e822bb-1"></a>valet domain &lt;name&gt;
 </pre>
 </div>
 <div class="section" id="tls">
 <h2>將網站啟用TLS</h2>
 <p>Valet預設專案網站皆走HTTP，我們也可將網站啟用TLS來使用HTTP/2，例如現有一透過Valet執行的網站 <cite>blog.dev</cite> ，可以簡單透過下面指令來啟用TLS加密服務:</p>
-<pre class="code bash"><a name="rest_code_8638fc419650426fae2b81157178affd-1"></a>valet secure blog
+<pre class="code bash"><a name="rest_code_669e5736bcb346f6ad342fe7c2871508-1"></a>valet secure blog
 </pre>
 <p>當然我們也可以隨時取消加密服務:</p>
-<pre class="code bash"><a name="rest_code_dc1eaf81d7be4e1f862ee95109e892e0-1"></a>valet unsecure blog
+<pre class="code bash"><a name="rest_code_1ca418a92a4e4688888e667dae23cc07-1"></a>valet unsecure blog
 </pre>
 <p>以上，為使用Valet的一些紀錄與心得，透過Valet，可以很快地在本地端開發與查看，不需要額外安裝與設定，也不需要每次都丟上網頁空間就能直接收到回饋，推薦給只是想單純開發網頁但覺得裝虛擬機很麻煩，或不希望將環境弄的太複雜髒亂的人參考~</p>
 </div>

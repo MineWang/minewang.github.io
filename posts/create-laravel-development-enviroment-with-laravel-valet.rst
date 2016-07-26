@@ -15,7 +15,7 @@
 
 然而Homestead在啟動的速度較慢，且因為Homestead本身就是個完整的Ubuntu虛擬機器，所以安裝所需的空間也較大，對於單純想專注於網頁開發與資料庫的人來說有點殺雞焉用牛刀了，如果只是純粹想要能在本地快速開發網頁的話，那Valet是一個好選擇。
 
-Laravel Valet目前只支援Mac系統，安裝上十分簡單，只要事先裝好PHP與SQL資料庫即可，在Mac上可以簡單透過 `Homebrew <http://brew.sh>` 來完成，詳細請參考官方的 `說明文件 <https://laravel.com/docs/5.2/valet>`__ ，這邊就不再多說明安裝流程。另外要注意的是確保沒有程式佔用80 port, 否則安裝可能會失敗。
+Laravel Valet目前只支援Mac系統，安裝上十分簡單，只要事先裝好PHP與SQL資料庫即可，在Mac上可以簡單透過 `Homebrew <http://brew.sh>`__ 來完成，詳細請參考官方的 `說明文件 <https://laravel.com/docs/5.2/valet>`__ ，這邊就不再多說明安裝流程。另外要注意的是確保沒有程式佔用80 port, 否則安裝可能會失敗。
 
 Serving Sites
 -------------

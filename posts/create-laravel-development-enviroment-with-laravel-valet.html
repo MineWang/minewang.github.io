@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="透過Laravel Valet建立簡易開發環境">
+<meta name="viewport" content="width=device-width">
+<title>使用Laravel Valet快速建立簡單的開發環境 | MJ Space</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://minewang.github.io/posts/create-laravel-development-enviroment-with-laravel-valet.html">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Mango">
+<meta property="og:site_name" content="MJ Space">
+<meta property="og:title" content="使用Laravel Valet快速建立簡單的開發環境">
+<meta property="og:url" content="http://minewang.github.io/posts/create-laravel-development-enviroment-with-laravel-valet.html">
+<meta property="og:description" content="透過Laravel Valet建立簡易開發環境">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-07-27T00:24:04+08:00">
+<meta property="article:tag" content="laravel">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="valet">
+</head>
+<body>
+    <section class="social"><ul>
+<li><a href="../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://github.com/minewang" title="My Github"><i class="icon-github"></i></a></li>
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+    <div class="post">
+    
+    <h1 class="p-name entry-title" itemprop="headline name">使用Laravel Valet快速建立簡單的開發環境</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2016-07-27T00:24:04+08:00">2016-07-27 00:24</time>
+            
+
+            
+          |  
+        <a href="create-laravel-development-enviroment-with-laravel-valet.rst" id="sourcelink">Source</a>
+
+            </div>
+            
+        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/laravel.html" rel="tag">laravel</a></li>
+           <li><a class="tag p-category" href="../categories/php.html" rel="tag">php</a></li>
+           <li><a class="tag p-category" href="../categories/valet.html" rel="tag">valet</a></li>
+        </ul>
+</div>
+
+        </div>
+        <div class="body">
+            <div>
+<p>本篇要來紀錄一下如何使用 <a class="reference external" href="https://laravel.com/docs/5.2/valet">Laravel Valet</a> 來建立一個簡易的開發環境。Laravel Valet是Laravel針對Mac環境所開發的一套工具，不需要額外安裝VM、Nginx與修改 <tt class="docutils literal">/etc/hosts</tt> 文件等等，讓我們可以更加專注在開發上。</p>
+<!-- TEASER_END -->
+<p>有使用過Laravel開發的朋友應該會知道Laravel提供的另一個強大的本地開發環境 <strong>Homestead</strong> ，最早之前我也是使用Homestead來進行開發的，參照 <a class="reference external" href="https://laravel.com/docs/5.2/homestead">官方文件</a> 即可打造出一個事先配置好的虛擬環境。</p>
+<p>然而Homestead在啟動的速度較慢，且因為Homestead本身就是個完整的Ubuntu虛擬機器，所以安裝所需的空間也較大，對於單純想專注於網頁開發與資料庫的人來說有點殺雞焉用牛刀了，如果只是純粹想要能在本地快速開發網頁的話，那Valet是一個好選擇。</p>
+<p>Laravel Valet目前只支援Mac系統，安裝上十分簡單，只要事先裝好PHP與SQL資料庫即可，在Mac上可以簡單透過 <cite>Homebrew &lt;http://brew.sh&gt;</cite> 來完成，詳細請參考官方的 <a class="reference external" href="https://laravel.com/docs/5.2/valet">說明文件</a> ，這邊就不再多說明安裝流程。另外要注意的是確保沒有程式佔用80 port, 否則安裝可能會失敗。</p>
+<div class="section" id="serving-sites">
+<h2>Serving Sites</h2>
+<p>當Valet安裝好後，可以透過兩個指令來執行我們的Laravel網站: <strong>park</strong> 與 <strong>link</strong> 。</p>
+<ul class="simple">
+<li>park指令可以執行某個資料夾底下新建的所有Laravel專案。</li>
+<li>link指令可以執行單一Laravel專案，而非選擇所有專案。</li>
+</ul>
+</div>
+<div class="section" id="domain">
+<h2>使用其他Domain</h2>
+<p>Valet預設的domain使用 ** .dev ** 結尾，其網址的結構為 <cite>http://&lt;Folder Name&gt;.dev</cite> ，我們可以透過下面的指令更改想要的網域:</p>
+<pre class="code bash"><a name="rest_code_cf4109645ebd4050a90d776be7516ec8-1"></a>valet domain &lt;name&gt;
+</pre>
+</div>
+<div class="section" id="tls">
+<h2>將網站啟用TLS</h2>
+<p>Valet預設專案網站皆走HTTP，我們也可將網站啟用TLS來使用HTTP/2，例如現有一透過Valet執行的網站 <cite>blog.dev</cite> ，可以簡單透過下面指令來啟用TLS加密服務:</p>
+<pre class="code bash"><a name="rest_code_8638fc419650426fae2b81157178affd-1"></a>valet secure blog
+</pre>
+<p>當然我們也可以隨時取消加密服務:</p>
+<pre class="code bash"><a name="rest_code_dc1eaf81d7be4e1f862ee95109e892e0-1"></a>valet unsecure blog
+</pre>
+<p>以上，為使用Valet的一些紀錄與心得，透過Valet，可以很快地在本地端開發與查看，不需要額外安裝與設定，也不需要每次都丟上網頁空間就能直接收到回饋，推薦給只是想單純開發網頁但覺得裝虛擬機很麻煩，或不希望將環境弄的太複雜髒亂的人參考~</p>
+</div>
+</div>
+        </div>
+        
+        <ul class="pager hidden-print">
+<li class="previous">
+                <a href="create-blog-using-nikola.html" rel="prev" title="使用Nikola + Github Pages打造個人部落格">Previous post</a>
+            </li>
+        </ul>
+<div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="mjwangblog",
+            disqus_url="http://minewang.github.io/posts/create-laravel-development-enviroment-with-laravel-valet.html",
+        disqus_title="\u4f7f\u7528Laravel Valet\u5feb\u901f\u5efa\u7acb\u7c21\u55ae\u7684\u958b\u767c\u74b0\u5883",
+        disqus_identifier="cache/posts/create-laravel-development-enviroment-with-laravel-valet.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+
+    </div>
+
+        
+       <script>var disqus_shortname="mjwangblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2016         <a href="mailto:mango79314@gmail.com">Mango</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </section><script src="../assets/js/all-nocdn.js" type="text/javascript"></script><script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

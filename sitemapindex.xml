@@ -14,23 +14,35 @@
   <lastmod>2016-06-02T05:17:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://minewang.github.io/categories/laravel.xml</loc>
+  <lastmod>2016-07-26T17:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://minewang.github.io/categories/nikola.xml</loc>
   <lastmod>2016-06-02T05:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://minewang.github.io/categories/php.xml</loc>
+  <lastmod>2016-07-26T17:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://minewang.github.io/categories/python.xml</loc>
   <lastmod>2016-06-02T05:17:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://minewang.github.io/categories/valet.xml</loc>
+  <lastmod>2016-07-26T17:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://minewang.github.io/galleries/rss.xml</loc>
-  <lastmod>2016-06-02T08:07:00Z</lastmod>
+  <lastmod>2016-07-26T16:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://minewang.github.io/rss.xml</loc>
-  <lastmod>2016-06-02T05:17:00Z</lastmod>
+  <lastmod>2016-07-26T17:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://minewang.github.io/sitemap.xml</loc>
-  <lastmod>2016-06-02T08:07:00Z</lastmod>
+  <lastmod>2016-07-26T17:59:00Z</lastmod>
  </sitemap>
 </sitemapindex>
